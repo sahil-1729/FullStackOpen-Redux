@@ -23,3 +23,7 @@ https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/
       return state
   }
 }
+***
+- Learnt we can use event.target.name.value instead of event.target.value to get the input of value, wherein name is from this(in the form tag)
+- <input name="n"> </input>
+***
