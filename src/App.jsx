@@ -1,18 +1,15 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { increaseVote, newNote } from './reducers/anecdoteReducer'
-import AnecdoteForm from "./components/anecdoteForm"
-import AnecList from "./components/anecdoteList"
+import { useSelector, useDispatch } from "react-redux";
+import { increaseVote, newNote } from "./reducers/anecdoteReducer";
+import AnecdoteForm from "./components/anecdoteForm";
+import AnecList from "./components/anecdoteList";
 const App = () => {
-
-
-
   return (
     <div>
-      <AnecList/>
+      <AnecList />
       <h2>create new</h2>
-      <AnecdoteForm/>
+      <AnecdoteForm />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
