@@ -5,7 +5,10 @@ const anecList = () => {
   const anecdotes = useSelector((state) => {
     console.log(state.filter);
     if (state.filter === "ALL") {
-      return state.anecdote;
+      const res = state.anecdote.sort((a,b) => {
+        return a.votes - b.votes
+      })
+      return res;
     } else {
       const filtered = state.anecdote.filter((val) => {
         const storedVal = val.content.toLowerCase();
@@ -20,7 +23,7 @@ const anecList = () => {
   const dispatch = useDispatch();
   const vote = (id) => {
     dispatch(increaseVote(id));
-    console.log("vote", id);
+    // console.log("vote", id);
   };
   return (
     <>

@@ -3,7 +3,7 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
 import anecdoteReducer from './reducers/anecdoteReducer'
-import anecdoteFilter from "./reducers/anecdoteFilter"
+import anecdoteFilter from "./reducers/anecdoteFilterReducer"
 const reducer = combineReducers({
   filter : anecdoteFilter,
   anecdote : anecdoteReducer
