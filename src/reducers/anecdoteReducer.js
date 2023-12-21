@@ -42,9 +42,14 @@ const reducer = (state = initialState, action) => {
   console.log("action", action);
   switch (action.type) {
     case "newNote":
-      const updated = [...state,action.payload]
-      return updated
+      const updated = [...state, action.payload];
+      return updated;
     case "vote":
+      const res = state.sort((a, b) => {
+        console.log(`the votes ${a.votes} ${b.votes}`);
+        return a.votes - b.votes;
+      });
+      console.log(`${res}`);
       const toBeChange = state.find((it) => action.id === it.id);
       const changed = { ...toBeChange, votes: toBeChange.votes + 1 };
       return state.map((it) => {

@@ -5,17 +5,25 @@ const anecList = () => {
   const anecdotes = useSelector((state) => {
     console.log(state.filter);
     if (state.filter === "ALL") {
-      const res = state.anecdote.sort((a,b) => {
-        return a.votes - b.votes
-      })
+      const res = state.anecdote.sort((a, b) => {
+        // console.log(`the votes ${a.votes} ${b.votes}`)
+        return a.votes - b.votes;
+      });
+      console.log(...res);
       return res;
     } else {
-      const filtered = state.anecdote.filter((val) => {
+      const res = state.anecdote.sort((a, b) => {
+        console.log(`the votes ${a.votes} ${b.votes}`);
+        return a.votes - b.votes;
+      });
+      console.log(`${res}`);
+      const filtered = res.filter((val) => {
         const storedVal = val.content.toLowerCase();
         const toBeCompared = state.filter.toLowerCase();
         return storedVal.startsWith(toBeCompared);
       });
-      return filtered
+
+      return filtered;
     }
     // return state.filter === "ALL" ? state.anecdote :
     // return state.anecdote

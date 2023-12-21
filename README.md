@@ -40,3 +40,5 @@ https://docs.github.com/en/authentication/managing-commit-signature-verification
 https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
 https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0 ye wala most
 ***
+- Learnt about combineReducers, used multiple reducers. For creating the reducers, used a reducer function, and action creator function for combining the reducers. One for filtering, and other for showing the notes. 
+- Also while using the combined reducers, had to make changes in useSelector(state => state.content) instead of useSelector(state => state), because the content to be shown isn't just in state obj now. 
