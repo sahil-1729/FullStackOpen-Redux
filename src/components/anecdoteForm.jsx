@@ -9,16 +9,20 @@ const newForm = () => {
     console.log("submitted, value entered is ", e.target.val.value);
   };
   return (
-    <form
-      onSubmit={(e) => {
-        Execute(e);
-      }}
-    >
-      <div>
-        <input placeholder="Enter your value" name="val" />
-      </div>
-      <button type="submit">create</button>
-    </form>
+    <>
+      <h2>create new</h2>
+
+      <form
+        onSubmit={(e) => {
+          Execute(e);
+        }}
+      >
+        <div>
+          <input placeholder="Enter your value" name="val" />
+        </div>
+        <button type="submit">create</button>
+      </form>
+    </>
   );
 };
 export default newForm;

@@ -46,7 +46,6 @@ const reducer = (state = initialState, action) => {
       return updated
     case "vote":
       const toBeChange = state.find((it) => action.id === it.id);
-
       const changed = { ...toBeChange, votes: toBeChange.votes + 1 };
       return state.map((it) => {
         return it.id != action.id ? it : changed;
