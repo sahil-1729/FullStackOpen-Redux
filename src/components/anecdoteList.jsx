@@ -37,7 +37,7 @@ const anecList = () => {
   });
   const dispatch = useDispatch();
   const increaseVote = (id) => {
-    console.log(clickCount)
+    // console.log(clickCount)
     if(clickCount >= 0){
       clearTimeout(clickCount)
       console.log(`clear timeout `,clickCount)

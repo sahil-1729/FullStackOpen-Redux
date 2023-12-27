@@ -65,3 +65,25 @@ https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-f
       });
     },
 - I have modified(using the push), as well as returning a new value, where both cannot be done at same time. Here(redux toolkit) uses immer, which makes it possible to mutate inside reducer, just so it uses the mutated state to produce immutable state.
+***
+- Revised how to use axios to connect to .json file
+import axios from "axios";
+
+const baseURL = "http://localhost:3001/{name of the key in the .json file}"
+const getAll = async () => {
+    const response = await axios.get(baseURL)
+    // console.log(`This is the response recieved`,response)
+    return response.data
+}
+- in .json file e.g here key is anecdotes, so url would be http://localhost:3001/anecdotes
+"anecdotes": [
+    {
+      "content": "If it hurts, do it more often",
+      "id": "47145",
+      "votes": 0
+    },
+    {
+      "content": "Adding manpower to a late software project makes it later!",
+      "id": "21149",
+      "votes": 0
+    }]
