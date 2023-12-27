@@ -4,7 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins"],
+        inter: ["Inter"],
+        cardo: ["Cardo"],
+        Kanit: ["Kanit"],
+      }
+    },
   },
   plugins: [],
 }

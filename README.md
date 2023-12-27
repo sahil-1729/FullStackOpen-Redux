@@ -42,3 +42,26 @@ https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-f
 ***
 - Learnt about combineReducers, used multiple reducers. For creating the reducers, used a reducer function, and action creator function for combining the reducers. One for filtering, and other for showing the notes. 
 - Also while using the combined reducers, had to make changes in useSelector(state => state.content) instead of useSelector(state => state), because the content to be shown isn't just in state obj now. 
+***
+- Learnt how to use the createSlice function in redux, was confused in, understanding that, action object has already predefined values, type and payload, wherein the type is given as the createSliceFnName/reducerName, and the payload is the content passed in the action creator(when the fn is called)
+***
+- Following is a reducer in createSlice
+    newNote(state, action) {
+      const updated = action.payload;
+      state.push({
+        content : updated,
+        id : getId(),
+        votes: 0
+      });
+    },
+- here i have, only modified the value, not returned a new value,
+- In this case,
+    newNote(state, action) {
+      const updated = action.payload;
+      return state.push({
+        content : updated,
+        id : getId(),
+        votes: 0
+      });
+    },
+- I have modified(using the push), as well as returning a new value, where both cannot be done at same time. Here(redux toolkit) uses immer, which makes it possible to mutate inside reducer, just so it uses the mutated state to produce immutable state.
