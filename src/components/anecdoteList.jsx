@@ -38,10 +38,10 @@ const anecList = () => {
   const dispatch = useDispatch();
   const increaseVote = (id) => {
     // console.log(clickCount)
-    if(clickCount >= 0){
-      clearTimeout(clickCount)
-      console.log(`clear timeout `,clickCount)
-    }
+    // if(clickCount >= 0){
+    //   clearTimeout(clickCount)
+    //   console.log(`clear timeout `,clickCount)
+    // }
     dispatch(vote(id));
     // console.log(`The id i am looking`,id)
     const anec = anecdotes.find(it => {

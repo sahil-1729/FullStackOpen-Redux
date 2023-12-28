@@ -87,3 +87,12 @@ const getAll = async () => {
       "id": "21149",
       "votes": 0
     }]
+***
+- Learnt about redux thunk. With the help of redux thunk, we can implement action creators, which usually returns a object, can instead return function. 
+- The function to be returned, is given dispatch and getState method as parameters, in the anecdotes project, i used dispatch as param,
+export const initializeNotes = () => {
+  return async dispatch => {
+    const notes = await noteService.getAll()
+    dispatch(setNotes(notes))
+  }
+}

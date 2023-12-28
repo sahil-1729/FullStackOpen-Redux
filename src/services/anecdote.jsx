@@ -4,7 +4,7 @@ const baseURL = "http://localhost:3001/anecdotes"
 const getId = () => (100000 * Math.random()).toFixed(0);
 const getAll = async () => {
     const response = await axios.get(baseURL)
-    // console.log(`This is the response recieved`,response)
+    console.log(`This is the response recieved`,response.data)
     return response.data
 }
 const createNew = async (content) => {
