@@ -96,3 +96,27 @@ export const initializeNotes = () => {
     dispatch(setNotes(notes))
   }
 }
+***
+- Learnt how to use ReactQuery, add <QueryClientProvider/> in the main.jsx file with client={queryClient} where queryClient  = new QueryClient()
+- Learnt that, in the given code
+export const getAnec = async () => {
+  var answer = await axios
+    .get("http://localhost:3001/anecdotes")
+    .then((res) => {
+      return res.data;
+    });
+};
+- when this function is used in useQuery,
+  const result = useQuery({
+    queryKey: ["anecdotes"],
+    queryFn: getAnec
+  });
+- it wont give any value returned. Because in the getAnec function the promise is getting returned in the getAnec, but it doesn't return to useQuery, so it should be like this
+export const getAnec = async () => {
+  var answer = await axios
+    .get("http://localhost:3001/anecdotes")
+    .then((res) => {
+      return res.data;
+    });
+  return answer;
+};
